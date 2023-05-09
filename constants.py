@@ -15,12 +15,14 @@ COMMENT_START1 = "(*"
 COMMENT_END1 = "*)"
 COMMENT_START2 = "{"
 COMMENT_END2 = "}"
-
+YALEX_REGEX = 'let'
+YALEX_TOKEN = 'rule tokens'
 TOKEN_RETURN = 'return'
+
 ALPHABET = [chr(i) for i in range(ord('A'), ord('Z') + 1)] + \
                         [chr(i) for i in range(ord('a'), ord('z') + 1)] + \
                         [chr(i) for i in range(ord('0'), ord('9') + 1)] + \
-                        ['\t', '\n'] 
+                        ['\t', '\n',' '] 
 # PATH
 DIRECTORY = './generated/'
 YALEX_DIRECTORY = './yalex/'

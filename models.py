@@ -8,10 +8,14 @@ class Convert_Infix_Postfix:
         self.postfix = []
         self.lastChar = None
         self.precedence = {
-            ALTERNATIVE: 1,
-            DOT: 2,
+            KLEENE: 3,
+            PLUS_OPERATOR: 3,
             OPTIONAL: 3,
-            KLEENE: 3
+            DOT: 1,
+            ALTERNATIVE: 2,
+            OPEN_PARENTESIS: 0,
+            CLOSED_PARENTESIS: 0,
+            '': 0
         }
         self.alphabet = []
         self.stack = []

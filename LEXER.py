@@ -168,7 +168,9 @@ class Lexer:
             if c == '=':
                 partition_index = i
                 break
-        
+        #line = line.replace('let','',1).lstrip().rstrip()
+        #ruleName, ruleBody = line.split('=')
+        #ruleName, ruleBody = ruleName.lstrip().rstrip(), ruleBody.lstrip().rstrip()
         #print(line[4: partition_index],line[partition_index + 1:])
         ruleName = self.removeSpaces(line[4: partition_index])
         ruleBody = self.removeSpaces(line[partition_index + 1:])
@@ -201,7 +203,9 @@ class Lexer:
             if not c.isspace() or in_single_quotes or in_double_quotes:
                 if c != "'":
                     result += c
-        
+            elif c.isspace() or in_single_quotes or in_double_quotes:
+                #result += "\\s"
+                pass
         return result
 
     """Expands character ranges in a regular expression"""
